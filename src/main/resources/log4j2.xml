@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration shutdownHook="disable">
+    <Filter type="ThresholdFilter" level="trace" shutdownHook="disable" />
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+        </Console>
+    </Appenders>
+    <loggers>
+        <logger name="com.dean.java8.*" level="debug" additivity="false">
+            <appender-ref ref="Console" />
+        </logger>
+        <!-- 默认输出级别，包括所有依赖的组件，如果没有在上面定义的，都输出到这个位置 -->
+        <Root level="debug">
+            <AppenderRef ref="Console" />
+        </Root>
+    </loggers>
+</configuration>
